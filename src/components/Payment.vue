@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="card card-outline-secondary" v-if="!success">
+  <div>
+    <div class="card card-outline-secondary container" v-if="!success">
       <div class="card-body">
         <h3 class="text-center">Credit Card Payment</h3>
         <hr />
@@ -114,7 +114,12 @@
         </form>
       </div>
     </div>
-    <Success v-if="success" :price="plan.price" :name="payment.name" />
+    <Success
+      v-if="success"
+      @close="success = false; $emit('closePayment')"
+      :price="plan.price"
+      :name="payment.name"
+    />
   </div>
 </template>
 

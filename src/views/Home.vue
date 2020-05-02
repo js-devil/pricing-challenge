@@ -30,11 +30,10 @@
 <script>
 // @ is an alias to /src
 import Payment from "@/components/Payment.vue";
-import Success from "@/components/Success.vue";
 
 export default {
   name: "Home",
-  components: { Payment, Success },
+  components: { Payment },
   data() {
     return {
       plans: [
